@@ -89,7 +89,7 @@ export interface ExperienceEntry {
 
 export const EXPERIENCE: ExperienceEntry[] = [
   { company: "Hyundai Motor Deutschland", prefix: "exp1", bullets: 3, tags: ["Tableau", "SQL", "AI Agents", "LLMs"], current: true },
-  { company: "Goethe University Frankfurt", prefix: "exp2", bullets: 4, tags: ["KPI Analytics", "Data Integration", "Automation"] },
+  { company: "Goethe-Universität Frankfurt", prefix: "exp2", bullets: 4, tags: ["KPI Analytics", "Data Integration", "Automation"] },
   { company: "Volkswagen Financial Services", prefix: "exp3", bullets: 4, tags: ["Python", "scikit-learn", "CI/CD", "Forecasting"] },
   { company: "Robert Bosch GmbH", prefix: "exp4", bullets: 2, tags: ["Python", "Anomaly Detection", "Quality Assurance"] },
   { company: "Fraunhofer IEE", prefix: "exp5", bullets: 2, tags: ["Statistics", "Time Series", "Reporting"] },

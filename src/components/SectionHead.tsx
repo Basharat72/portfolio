@@ -11,7 +11,7 @@ interface SectionHeadProps {
 export function SectionHead({ kicker, title, sub }: SectionHeadProps) {
   const { t } = useLanguage();
   return (
-    <Reveal className="mb-10 max-w-[640px] md:mb-16">
+    <Reveal className="mb-8 max-w-[640px] md:mb-10">
       <p className="kicker">{t(kicker)}</p>
       <h2 className="font-display text-[clamp(1.8rem,4vw,2.7rem)] font-semibold tracking-tight">
         {t(title)}

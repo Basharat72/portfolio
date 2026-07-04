@@ -109,7 +109,7 @@ export function Hero() {
     <section
       id="top"
       onMouseMove={onMove}
-      className="relative flex min-h-svh items-center overflow-hidden pb-20 pt-[calc(72px+3rem)]"
+      className="relative flex min-h-[92svh] items-center overflow-hidden pb-14 pt-[calc(72px+2.5rem)]"
     >
       {/* animated backdrop */}
       <motion.div aria-hidden className="absolute inset-0 pointer-events-none" style={{ x: sx, y: sy }}>

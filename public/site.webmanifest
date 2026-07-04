@@ -1,0 +1,12 @@
+{
+  "name": "Basharat Mubashir Ahmed — Portfolio",
+  "short_name": "Basharat Ahmed",
+  "description": "Data Analyst & AI Engineer",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f7f8fd",
+  "theme_color": "#4f5df0",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

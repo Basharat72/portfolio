@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /cv.html
+
+# After deploying, uncomment and set your domain:
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml

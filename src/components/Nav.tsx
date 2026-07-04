@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useTheme } from "../hooks/useTheme";
 import type { Lang, TranslationKey } from "../i18n/translations";
-import { MoonIcon, SunIcon } from "./icons";
+import { MoonIcon, SearchIcon, SunIcon } from "./icons";
 
 const NAV_ITEMS: { id: string; key: TranslationKey }[] = [
   { id: "about", key: "nav.about" },
@@ -42,7 +42,7 @@ function LangToggle() {
         <button
           key={code}
           type="button"
-          aria-pressed={lang === code}
+          aria-pressed={lang === code ? "true" : "false"}
           onClick={() => setLang(code)}
           className={`relative z-10 rounded-full px-[13px] py-1.5 text-[0.8rem] font-semibold tracking-wide transition-colors duration-300 ${
             lang === code ? "text-white" : "text-soft"
@@ -146,25 +146,38 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <LangToggle />
-          <ThemeToggle />
-          {/* mobile burger */}
+          {/* command palette trigger (⌘K) */}
           <button
             type="button"
-            className="icon-btn flex-col gap-[5px] md:hidden"
-            aria-label={t("nav.menuAria")}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
+            className="icon-btn"
+            aria-label={t("palette.open")}
+            title={`${t("palette.open")} — ⌘K`}
+            onClick={() => window.dispatchEvent(new CustomEvent("open-palette"))}
           >
-            <motion.span
-              className="block h-[2px] w-[17px] rounded-full bg-current"
-              animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 3.5 : 0 }}
-            />
-            <motion.span
-              className="block h-[2px] w-[17px] rounded-full bg-current"
-              animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -3.5 : 0 }}
-            />
+            <SearchIcon size={17} />
           </button>
+          <LangToggle />
+          <ThemeToggle />
+          {/* mobile burger — wrapper handles the breakpoint because .icon-btn
+              sets its own display and would override md:hidden */}
+          <span className="md:hidden">
+            <button
+              type="button"
+              className="icon-btn flex-col gap-[5px]"
+              aria-label={t("nav.menuAria")}
+              aria-expanded={menuOpen ? "true" : "false"}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <motion.span
+                className="block h-[2px] w-[17px] rounded-full bg-current"
+                animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 3.5 : 0 }}
+              />
+              <motion.span
+                className="block h-[2px] w-[17px] rounded-full bg-current"
+                animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -3.5 : 0 }}
+              />
+            </button>
+          </span>
         </div>
       </nav>
 

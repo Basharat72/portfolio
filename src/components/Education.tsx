@@ -1,14 +1,15 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import type { TranslationKey } from "../i18n/translations";
-import { EDUCATION } from "../data";
+import { EDUCATION, HONORS } from "../data";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
+/** Education and honors share one section — less scrolling, same story. */
 export function Education() {
   const { t } = useLanguage();
 
   return (
-    <section id="education" className="section-alt py-[clamp(4.5rem,9vw,7.5rem)]">
+    <section id="education" className="section-alt py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
         <SectionHead kicker="edu.kicker" title="edu.title" />
 
@@ -34,6 +35,31 @@ export function Education() {
                 </p>
                 <p className="text-[0.84rem] text-faint">{t(`${prefix}.date` as TranslationKey)}</p>
                 <p className="mt-2 text-[0.9rem] text-soft">{t(`${prefix}.note` as TranslationKey)}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* honors */}
+        <Reveal>
+          <h3 className="group-rule mb-5 mt-12">{t("hon.title")}</h3>
+        </Reveal>
+        <div className="grid gap-5 md:grid-cols-3">
+          {HONORS.map(({ prefix, icon: Icon }, i) => (
+            <Reveal key={prefix} delay={i}>
+              <article className="glass group relative h-full overflow-hidden px-7 py-7 transition-transform duration-300 hover:-translate-y-1.5 hover:border-border-strong hover:shadow-[var(--shadow-card)]">
+                <span
+                  aria-hidden
+                  className="absolute -right-10 -top-10 h-[130px] w-[130px] rounded-full opacity-0 transition-opacity duration-[400ms] group-hover:opacity-100"
+                  style={{ background: "radial-gradient(circle, var(--glow-accent), transparent 70%)" }}
+                />
+                <div className="icon-tile icon-tile--gold mb-4 h-[50px] w-[50px] rounded-2xl">
+                  <Icon size={22} />
+                </div>
+                <h3 className="mb-2 font-display text-[1.08rem] font-semibold">
+                  {t(`${prefix}.t` as TranslationKey)}
+                </h3>
+                <p className="text-[0.9rem] text-soft">{t(`${prefix}.d` as TranslationKey)}</p>
               </article>
             </Reveal>
           ))}

@@ -11,9 +11,10 @@ import { Skills } from "./components/Skills";
 import { Experience } from "./components/Experience";
 import { Education } from "./components/Education";
 import { Projects } from "./components/Projects";
-import { Honors } from "./components/Honors";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { CommandPalette } from "./components/CommandPalette";
+import { DotNav } from "./components/DotNav";
 
 /** Expanding-circle ripple on every .btn click (skipped for reduced motion). */
 function useRipple() {
@@ -55,6 +56,8 @@ function Shell() {
       </a>
 
       <Nav />
+      <CommandPalette />
+      <DotNav />
 
       {/* whole-page crossfade while the language swaps */}
       <div style={{ opacity: fading ? 0 : 1, transition: "opacity 0.2s ease" }}>
@@ -64,9 +67,8 @@ function Shell() {
           <About />
           <Skills />
           <Experience />
-          <Education />
           <Projects />
-          <Honors />
+          <Education />
           <Contact />
         </main>
         <Footer />

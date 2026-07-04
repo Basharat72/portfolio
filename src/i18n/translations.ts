@@ -12,6 +12,7 @@ const en = {
 
   "a11y.skip": "Skip to content",
 
+  "nav.top": "Top",
   "nav.about": "About",
   "nav.skills": "Skills",
   "nav.experience": "Experience",
@@ -20,6 +21,21 @@ const en = {
   "nav.langAria": "Switch language",
   "nav.themeAria": "Toggle light / dark mode",
   "nav.menuAria": "Open menu",
+  "nav.dotsAria": "Quick navigation",
+
+  "palette.open": "Search & jump anywhere",
+  "palette.placeholder": "Search sections and actions…",
+  "palette.sections": "Sections",
+  "palette.actions": "Actions",
+  "palette.toDark": "Switch to dark mode",
+  "palette.toLight": "Switch to light mode",
+  "palette.toEn": "Switch to English",
+  "palette.toDe": "Zur deutschen Version wechseln",
+  "palette.copyEmail": "Copy email address",
+  "palette.copied": "Email copied",
+  "palette.email": "Write an email",
+  "palette.empty": "No matches",
+  "palette.hint": "↑↓ navigate · ↵ open · esc close",
 
   "hero.badge": "Currently at Hyundai Motor Deutschland",
   "hero.greeting": "Hi, I’m",
@@ -75,6 +91,7 @@ const en = {
   "exp.kicker": "Career",
   "exp.title": "Where I’ve made an impact",
   "exp.current": "Current",
+  "exp.tablistAria": "Career stations",
 
   "exp1.role": "Data Analyst & AI Engineer",
   "exp1.date": "Jan 2026 – Present",
@@ -146,6 +163,8 @@ const en = {
   "proj.case": "Case study",
   "proj.wip": "In progress",
   "proj.soon": "Coming soon",
+  "proj.prev": "Scroll projects left",
+  "proj.next": "Scroll projects right",
 
   "proj1.title": "Used-Vehicle Market Forecasting",
   "proj1.desc":
@@ -215,6 +234,7 @@ const de: Record<TranslationKey, string> = {
 
   "a11y.skip": "Zum Inhalt springen",
 
+  "nav.top": "Start",
   "nav.about": "Über mich",
   "nav.skills": "Skills",
   "nav.experience": "Erfahrung",
@@ -223,6 +243,21 @@ const de: Record<TranslationKey, string> = {
   "nav.langAria": "Sprache wechseln",
   "nav.themeAria": "Zwischen hellem und dunklem Design wechseln",
   "nav.menuAria": "Menü öffnen",
+  "nav.dotsAria": "Schnellnavigation",
+
+  "palette.open": "Suchen & schnell springen",
+  "palette.placeholder": "Bereiche und Aktionen suchen …",
+  "palette.sections": "Bereiche",
+  "palette.actions": "Aktionen",
+  "palette.toDark": "Zum dunklen Design wechseln",
+  "palette.toLight": "Zum hellen Design wechseln",
+  "palette.toEn": "Switch to English",
+  "palette.toDe": "Zur deutschen Version wechseln",
+  "palette.copyEmail": "E-Mail-Adresse kopieren",
+  "palette.copied": "E-Mail kopiert",
+  "palette.email": "E-Mail schreiben",
+  "palette.empty": "Keine Treffer",
+  "palette.hint": "↑↓ wählen · ↵ öffnen · esc schließen",
 
   "hero.badge": "Aktuell bei Hyundai Motor Deutschland",
   "hero.greeting": "Hi, ich bin",
@@ -278,6 +313,7 @@ const de: Record<TranslationKey, string> = {
   "exp.kicker": "Werdegang",
   "exp.title": "Stationen, die mich geprägt haben",
   "exp.current": "Aktuell",
+  "exp.tablistAria": "Berufliche Stationen",
 
   "exp1.role": "Data Analyst & AI Engineer",
   "exp1.date": "Jan. 2026 – heute",
@@ -352,6 +388,8 @@ const de: Record<TranslationKey, string> = {
   "proj.case": "Details",
   "proj.wip": "In Arbeit",
   "proj.soon": "Demnächst",
+  "proj.prev": "Projekte nach links blättern",
+  "proj.next": "Projekte nach rechts blättern",
 
   "proj1.title": "Marktprognosen für Gebrauchtfahrzeuge",
   "proj1.desc":

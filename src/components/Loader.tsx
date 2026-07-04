@@ -6,13 +6,13 @@ export function Loader() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const finish = () => setTimeout(() => setDone(true), 350);
+    const finish = () => setTimeout(() => setDone(true), 250);
     if (document.readyState === "complete") {
       finish();
     } else {
       window.addEventListener("load", finish, { once: true });
     }
-    const safety = setTimeout(() => setDone(true), 2000);
+    const safety = setTimeout(() => setDone(true), 1400);
     return () => {
       window.removeEventListener("load", finish);
       clearTimeout(safety);

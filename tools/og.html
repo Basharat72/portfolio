@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>OG Card</title>
+  <!-- Social-share card source (1200×630). Regenerate the PNG with:
+       chrome --headless=new --screenshot=public/assets/og-image.png \
+              --window-size=1200,630 --hide-scrollbars tools/og.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body {
+      width: 1200px; height: 630px; overflow: hidden;
+      font-family: "Inter", sans-serif;
+      background: #050810; color: #f2f4fb;
+      position: relative;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 0 96px;
+    }
+    .blob { position: absolute; border-radius: 50%; filter: blur(110px); }
+    .b1 { width: 560px; height: 560px; right: -160px; top: -220px; background: rgba(100,122,255,.5); }
+    .b2 { width: 420px; height: 420px; left: -140px; bottom: -200px; background: rgba(0,212,255,.32); }
+    .grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 64px 64px;
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 25%, transparent 75%);
+    }
+    .badge {
+      position: relative; display: inline-flex; align-items: center; gap: 12px;
+      width: fit-content;
+      border: 1px solid rgba(255,255,255,.18); border-radius: 999px;
+      padding: 10px 22px; font-size: 21px; font-weight: 500; color: #aab3cb;
+      margin-bottom: 34px; background: rgba(255,255,255,.04);
+    }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: #4ade80; }
+    h1 {
+      position: relative;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 78px; line-height: 1.06; letter-spacing: -0.025em;
+      margin-bottom: 22px;
+    }
+    .grad {
+      background: linear-gradient(120deg, #647aff 0%, #a06bff 50%, #00d4ff 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .role { position: relative; font-size: 30px; font-weight: 600; color: #00d4ff; margin-bottom: 30px; }
+    .tags { position: relative; display: flex; gap: 14px; }
+    .tags span {
+      border: 1px solid rgba(255,255,255,.16); border-radius: 999px;
+      padding: 8px 20px; font-size: 20px; font-weight: 600; color: #aab3cb;
+      background: rgba(255,255,255,.045);
+    }
+    .mark {
+      position: absolute; right: 96px; bottom: 72px;
+      width: 84px; height: 84px; border-radius: 22px;
+      background: linear-gradient(120deg, #647aff, #a06bff 55%, #00d4ff);
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Space Grotesk", sans-serif; font-size: 42px; font-weight: 700; color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="grid"></div>
+  <p class="badge"><span class="dot"></span>Hyundai Motor Deutschland</p>
+  <h1>Basharat Mubashir Ahmed<br /><span class="grad">Data Analyst &amp; AI Engineer</span></h1>
+  <p class="role">Prognosemodelle · Anomalieerkennung · LLM-Systeme</p>
+  <div class="tags">
+    <span>Python</span><span>SQL</span><span>Tableau</span><span>Machine Learning</span><span>KI-Agenten</span>
+  </div>
+  <div class="mark">B.</div>
+</body>
+</html>

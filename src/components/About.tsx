@@ -15,7 +15,7 @@ export function About() {
   const paragraphs: TranslationKey[] = ["about.p1", "about.p2", "about.p3", "about.p4"];
 
   return (
-    <section id="about" className="py-[clamp(4.5rem,9vw,7.5rem)]">
+    <section id="about" className="py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
         <SectionHead kicker="about.kicker" title="about.title" />
 

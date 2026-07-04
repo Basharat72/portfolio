@@ -8,10 +8,15 @@ A hand-built, bilingual (🇬🇧 EN / 🇩🇪 DE) portfolio website.
 
 - **German by default**, instant switching to English with a page crossfade, remembered via `localStorage`
 - **Light mode by default** with an animated dark-mode toggle
+- **⌘K command palette** — jump to any section or run any action (theme, language,
+  CV download, copy email) without scrolling
+- **Experience as tabs** (desktop) / accordion (mobile) — the whole career fits in one
+  viewport; **projects as a horizontal snap carousel**; side dot-navigation on large screens
 - Spring-physics animations throughout: magnetic buttons, 3D card tilt, floating chips,
   animated gradients, scroll-triggered reveals, animated counters, typing effect,
-  custom cursor, ripple effects, shared-layout nav underline
-- Fully responsive, semantic HTML, `prefers-reduced-motion` support, SEO meta + JSON-LD
+  ambient cursor glow, ripple effects, shared-layout nav underline
+- Fully responsive, semantic HTML, `prefers-reduced-motion` support, SEO meta + JSON-LD,
+  OG share image, web manifest, robots.txt
 - All icons are hand-drawn inline SVG — zero icon requests
 
 ## Project structure

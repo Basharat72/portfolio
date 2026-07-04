@@ -41,7 +41,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-[clamp(4.5rem,9vw,7.5rem)]">
+    <section id="contact" className="py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
         <SectionHead kicker="contact.kicker" title="contact.title" sub="contact.sub" />
 
