@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basharat Mubashir Ahmed — Data Analyst &amp; AI Engineer</title>
+  <meta name="description" content="Data analyst and AI engineer in Germany — forecasting models, anomaly detection, LLM-based systems and dashboards people actually use. Currently at Hyundai Motor Deutschland." />
+  <meta name="author" content="Basharat Mubashir Ahmed" />
+  <meta name="theme-color" content="#07080d" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Basharat Mubashir Ahmed — Data Analyst &amp; AI Engineer" />
+  <meta property="og:description" content="Forecasting models, anomaly detection, LLM-based systems and dashboards people actually use. Currently at Hyundai Motor Deutschland." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+
+  <!-- Restore saved theme + language before first paint (prevents flash) -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var theme = localStorage.getItem("theme");
+      if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
+      var lang = localStorage.getItem("lang");
+      if (!lang) lang = (navigator.language || "en").slice(0, 2) === "de" ? "de" : "en";
+      root.setAttribute("lang", lang);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Basharat Mubashir Ahmed",
+    "jobTitle": "Data Analyst & AI Engineer",
+    "worksFor": { "@type": "Organization", "name": "Hyundai Motor Deutschland" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Universität Hildesheim" },
+      { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Delhi" },
+      { "@type": "CollegeOrUniversity", "name": "National Institute of Technology Durgapur" }
+    ],
+    "email": "mailto:basharatsaigal72@gmail.com",
+    "knowsLanguage": ["en", "de"],
+    "address": { "@type": "PostalAddress", "addressCountry": "DE" }
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
