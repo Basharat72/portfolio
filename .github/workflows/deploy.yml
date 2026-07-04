@@ -1,10 +1,10 @@
-# Builds the site and publishes it to GitHub Pages on every push to main.
-# One-time setup on github.com: Repo → Settings → Pages → Source: "GitHub Actions".
+# Optional backup deployment to GitHub Pages (manual trigger only — the site's
+# primary host is Vercel, which deploys automatically on every push).
+# To use: Repo → Settings → Pages → Source: "GitHub Actions", then run this
+# workflow from the Actions tab.
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
