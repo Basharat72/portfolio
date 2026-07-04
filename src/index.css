@@ -317,6 +317,13 @@ h1, h2, h3, h4 {
   display: flex; align-items: center; gap: 12px;
   padding: 15px 16px;
   overflow: hidden;
+  min-width: 0;
+}
+/* long German labels (Datenvalidierung, Prognosemodelle …) wrap instead of overflowing */
+.skill-card span:last-child {
+  min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .skill-card::before {
   content: ""; position: absolute; inset: 0;

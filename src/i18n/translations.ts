@@ -204,8 +204,8 @@ const en = {
   "contact.email": "Email",
   "contact.location": "Location",
   "contact.locationValue": "Frankfurt Rhein-Main, Germany",
-  "contact.githubValue": "Add your profile link",
-  "contact.linkedinValue": "Add your profile link",
+  "contact.githubValue": "github.com/Basharat72",
+  "contact.linkedinValue": "linkedin.com/in/basharat-mubashir-ahmed",
 
   "form.name": "Name",
   "form.namePh": "How should I address you?",
@@ -429,8 +429,8 @@ const de: Record<TranslationKey, string> = {
   "contact.email": "E-Mail",
   "contact.location": "Standort",
   "contact.locationValue": "Rhein-Main-Gebiet, Deutschland",
-  "contact.githubValue": "Profil-Link folgt",
-  "contact.linkedinValue": "Profil-Link folgt",
+  "contact.githubValue": "github.com/Basharat72",
+  "contact.linkedinValue": "linkedin.com/in/basharat-mubashir-ahmed",
 
   "form.name": "Name",
   "form.namePh": "Wie darf ich Sie ansprechen?",

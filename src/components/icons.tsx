@@ -362,3 +362,18 @@ export const CycleIcon = (p: P) => (
     <path d="M20 3.5V7h-3.5" />
   </svg>
 );
+
+export const StreamlitIcon = (p: P) => (
+  <svg {...base()} {...p}>
+    <rect x="3.5" y="4.5" width="17" height="15" rx="2.5" />
+    <path d="M9.5 8.5v7l6-3.5-6-3.5z" />
+  </svg>
+);
+
+export const DashIcon = (p: P) => (
+  <svg {...base()} {...p}>
+    <rect x="3.5" y="4.5" width="17" height="15" rx="2.5" />
+    <path d="M3.5 8.5h17" opacity=".5" />
+    <path d="M7 16l3-3.5 2.5 2 4.5-4.5" />
+  </svg>
+);

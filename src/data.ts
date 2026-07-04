@@ -11,7 +11,7 @@ import {
   RobotIcon, TrendIcon, PinwheelIcon, ContainerIcon, BranchIcon, InfinityIcon,
   LensChartIcon, LeafIcon, DoubleDbIcon, CrossGridIcon, BarsIcon, ReportIcon,
   CycleIcon, ShieldCheckIcon, GradCapIcon, AtomIcon, GearIcon, MedalIcon,
-  BoardIcon, FlaskIcon, SearchIcon, BoltIcon,
+  BoardIcon, FlaskIcon, SearchIcon, BoltIcon, StreamlitIcon, DashIcon,
 } from "./components/icons";
 
 type IconType = ComponentType<{ size?: number }>;
@@ -71,7 +71,8 @@ export const SKILL_GROUPS: SkillGroup[] = [
     titleKey: "skills.g4",
     skills: [
       { name: "Tableau", icon: CrossGridIcon },
-      { name: "Power BI", icon: BarsIcon },
+      { name: "Streamlit", icon: StreamlitIcon },
+      { name: "Dash", icon: DashIcon },
       { name: "Reporting", icon: ReportIcon },
       { nameKey: "skills.agile", icon: CycleIcon },
     ],
@@ -143,10 +144,9 @@ export const HONORS: HonorEntry[] = [
 ];
 
 /* -------------------------------------------------------------- links -- */
-// TODO: add your real profile URLs here — used across hero, contact and footer
 export const LINKS = {
-  github: "#",
-  linkedin: "#",
+  github: "https://github.com/Basharat72",
+  linkedin: "https://www.linkedin.com/in/basharat-mubashir-ahmed-86a8a4165/",
   email: "basharatsaigal72@gmail.com",
   cv: "./assets/Basharat-Mubashir-Ahmed-CV.pdf",
 };
