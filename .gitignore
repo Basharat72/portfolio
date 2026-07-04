@@ -4,3 +4,4 @@ dist
 Thumbs.db
 *.local
 .vercel
+.claude/
