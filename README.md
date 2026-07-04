@@ -6,8 +6,8 @@ A hand-built, bilingual (🇬🇧 EN / 🇩🇪 DE) portfolio website.
 
 ## Highlights
 
-- **Instant language switching** (EN ⇄ DE) with a page crossfade, remembered via `localStorage`
-- **Dark mode by default** with an animated light/dark toggle
+- **German by default**, instant switching to English with a page crossfade, remembered via `localStorage`
+- **Light mode by default** with an animated dark-mode toggle
 - Spring-physics animations throughout: magnetic buttons, 3D card tilt, floating chips,
   animated gradients, scroll-triggered reveals, animated counters, typing effect,
   custom cursor, ripple effects, shared-layout nav underline
@@ -35,10 +35,19 @@ portfolio/
 └── .github/workflows/deploy.yml  # auto-deploy to GitHub Pages
 ```
 
+## German CV (Lebenslauf)
+
+`public/cv.html` is a print-ready German CV. Open it at `http://localhost:5173/cv.html`
+(or `<your-site>/cv.html` once deployed), click **"Als PDF speichern"**, save it as
+`Basharat-Mubashir-Ahmed-CV.pdf` into `public/assets/` — that wires up the site's
+"Download CV" button. All CV text is plain HTML in that one file; `TODO` comments mark
+the spots waiting for your phone number, profile links and language levels.
+
 ## Before you publish — 5-minute checklist
 
-1. **Photo** — drop `public/assets/profile.jpg` in place (the "BA" monogram shows until then).
-2. **CV** — drop `public/assets/Basharat-Mubashir-Ahmed-CV.pdf` in place.
+1. **Photo** — drop `public/assets/profile.jpg` in place (the "BA" monogram shows until then;
+   the CV picks it up automatically too).
+2. **CV** — export the PDF from `public/cv.html` (see above) into `public/assets/`.
 3. **Links** — open `src/data.ts` and replace the `#` placeholders in `LINKS` with your
    GitHub and LinkedIn URLs.
 4. **Hyundai role** — the working title is "Data Analyst & AI Engineer" and the bullets are

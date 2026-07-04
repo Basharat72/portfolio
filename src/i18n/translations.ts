@@ -60,7 +60,7 @@ const en = {
 
   "skills.kicker": "Toolbox",
   "skills.title": "Skills & tools I use daily",
-  "skills.sub": "Only what I actually work with — no keyword bingo.",
+  "skills.sub": "The technologies I actually work with in real projects — nothing padded.",
   "skills.g1": "Languages & Analysis",
   "skills.g2": "Machine Learning & AI",
   "skills.g3": "Data Engineering",
@@ -80,7 +80,7 @@ const en = {
   "exp1.date": "Jan 2026 – Present",
   "exp1.b1": "Data analysis and interactive reporting with Tableau and SQL.",
   "exp1.b2": "AI engineering — from LLM-based solutions to autonomous AI agents.",
-  "exp1.b3": "This chapter is just beginning — more details soon.",
+  "exp1.b3": "New role since January 2026 — focus areas are growing with it.",
 
   "exp2.role": "Data Analyst & Project Manager",
   "exp2.date": "Aug 2024 – Dec 2025 · Frankfurt am Main",
@@ -155,13 +155,13 @@ const en = {
     "An EU-wide project on IT security and digital infrastructure at Goethe University Frankfurt: I owned data integration, data quality and the automation of recurring analyses — and built the KPI analyses and visualisations that partners from research, government and industry relied on.",
   "proj3.title": "AI Agents for Analytics",
   "proj3.desc":
-    "The newest chapter: analytics and AI engineering at Hyundai Motor Deutschland — Tableau, SQL and the design of LLM-based AI agents. Details will follow as the work matures. Watch this space.",
+    "The newest chapter: analytics and AI engineering at Hyundai Motor Deutschland — Tableau, SQL and the design of LLM-based AI agents. Details will follow as the work matures.",
   "proj4.title": "Sensor Anomaly Detection",
   "proj4.desc":
-    "Working-student role turned detective work at Bosch: finding anomalies in complex measurement data and supporting quality assurance close to production — where a missed outlier has real-world consequences.",
+    "Anomaly detection in complex measurement data at Bosch, supporting quality assurance close to production — an environment where a missed outlier has real-world consequences.",
   "proj5.title": "Automated Logistics Dashboards",
   "proj5.desc":
-    "KPI monitoring and automated dashboards for logistics process optimisation at Synaos — replacing manual reporting with data-driven tools that made the numbers impossible to ignore.",
+    "KPI monitoring and automated dashboards for logistics process optimisation at Synaos — replacing manual reporting with data-driven tools that gave the team reliable, continuous visibility into their processes.",
   "proj6.title": "Energy Time-Series Analysis",
   "proj6.desc":
     "Statistical analysis of energy measurement data at Fraunhofer IEE: identifying unusual patterns in time series and writing documented reports that carried the findings into research.",
@@ -263,7 +263,7 @@ const de: Record<TranslationKey, string> = {
 
   "skills.kicker": "Werkzeugkasten",
   "skills.title": "Skills & Tools für den Alltag",
-  "skills.sub": "Nur das, womit ich wirklich arbeite – kein Buzzword-Bingo.",
+  "skills.sub": "Die Technologien, mit denen ich tatsächlich in Projekten arbeite – ohne Füllmaterial.",
   "skills.g1": "Sprachen & Analyse",
   "skills.g2": "Machine Learning & KI",
   "skills.g3": "Data Engineering",
@@ -283,7 +283,7 @@ const de: Record<TranslationKey, string> = {
   "exp1.date": "Jan. 2026 – heute",
   "exp1.b1": "Datenanalyse und interaktives Reporting mit Tableau und SQL.",
   "exp1.b2": "AI Engineering – von LLM-basierten Lösungen bis zu autonomen KI-Agenten.",
-  "exp1.b3": "Dieses Kapitel beginnt gerade erst – mehr Details folgen.",
+  "exp1.b3": "Neu seit Januar 2026 – die Schwerpunkte wachsen mit der Rolle.",
 
   "exp2.role": "Datenanalyst & Projektmanager",
   "exp2.date": "Aug. 2024 – Dez. 2025 · Frankfurt am Main",
@@ -364,10 +364,10 @@ const de: Record<TranslationKey, string> = {
     "Das neueste Kapitel: Analytics und AI Engineering bei Hyundai Motor Deutschland – Tableau, SQL und der Aufbau LLM-basierter KI-Agenten. Details folgen, sobald die Arbeit reift.",
   "proj4.title": "Anomalieerkennung in Sensordaten",
   "proj4.desc":
-    "Detektivarbeit als Werkstudent bei Bosch: Anomalien in komplexen Messdaten aufspüren und die Qualitätssicherung im produktionsnahen Umfeld unterstützen – dort, wo ein übersehener Ausreißer echte Folgen hat.",
+    "Anomalieerkennung in komplexen Messdaten bei Bosch, zur Unterstützung der Qualitätssicherung im produktionsnahen Umfeld – dort, wo ein übersehener Ausreißer echte Folgen hat.",
   "proj5.title": "Automatisierte Logistik-Dashboards",
   "proj5.desc":
-    "KPI-Monitoring und automatisierte Dashboards zur Prozessoptimierung in der Logistik bei Synaos – manuelles Reporting ersetzt durch datengetriebene Tools, an deren Zahlen niemand mehr vorbeikam.",
+    "KPI-Monitoring und automatisierte Dashboards zur Prozessoptimierung in der Logistik bei Synaos – manuelles Reporting ersetzt durch datengetriebene Tools, die dem Team jederzeit verlässlichen Einblick in ihre Prozesse gaben.",
   "proj6.title": "Analyse von Energiezeitreihen",
   "proj6.desc":
     "Statistische Analyse von Energiemessdaten am Fraunhofer IEE: auffällige Verläufe in Zeitreihen identifizieren und die Ergebnisse in dokumentierten Reports in die Forschung tragen.",

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lebenslauf – Basharat Mubashir Ahmed</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* =====================================================================
+       Lebenslauf — druckoptimiert (A4). Zum Bearbeiten: Text unten ändern.
+       Als PDF speichern: Button oben oder Cmd/Ctrl+P → "Als PDF sichern".
+       ===================================================================== */
+    :root {
+      --ink: #171b2b;         /* Haupttext */
+      --ink-soft: #4a5069;    /* Nebentext */
+      --ink-faint: #8a90a5;   /* Datumszeilen etc. */
+      --accent: #3d4bd6;      /* Akzentfarbe — druckt sauber */
+      --rule: #e2e5ef;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+      font-size: 9.7pt;
+      line-height: 1.5;
+      color: var(--ink);
+      background: #e9ebf2;
+    }
+    /* ------- Bildschirm-Leiste (wird nicht gedruckt) ------- */
+    .toolbar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      padding: 12px 20px;
+      background: #171b2b; color: #fff;
+      font-size: 13px;
+    }
+    .toolbar button {
+      font: inherit; font-weight: 600; color: #171b2b;
+      background: #fff; border: 0; border-radius: 999px;
+      padding: 8px 20px; cursor: pointer;
+    }
+    .toolbar button:hover { background: #dfe3f2; }
+    /* ------- Seite ------- */
+    .page {
+      max-width: 186mm;
+      margin: 28px auto;
+      background: #fff;
+      padding: 16mm 15mm;
+      box-shadow: 0 20px 60px -20px rgba(20, 25, 50, 0.35);
+    }
+    /* ------- Kopf ------- */
+    header { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; }
+    h1 {
+      font-family: "Space Grotesk", "Inter", sans-serif;
+      font-size: 21pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+    }
+    .role { color: var(--accent); font-weight: 600; font-size: 11.5pt; margin-top: 3px; }
+    .contact { margin-top: 9px; list-style: none; color: var(--ink-soft); font-size: 9pt; }
+    .contact li { margin-top: 2px; }
+    .contact strong { color: var(--ink); font-weight: 600; }
+    .photo {
+      flex: none; width: 30mm; height: 38mm; border-radius: 6px;
+      background: linear-gradient(135deg, #4f5df0, #7c3aed 55%, #00b7e6);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 20pt; font-weight: 700;
+      overflow: hidden; position: relative;
+    }
+    .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    /* ------- Abschnitte ------- */
+    section { margin-top: 18px; }
+    h2 {
+      font-family: "Space Grotesk", "Inter", sans-serif;
+      font-size: 10pt; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.13em;
+      color: var(--accent);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 9px;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+    .profil { color: var(--ink-soft); text-align: justify; }
+    /* Einträge: Datum links, Inhalt rechts */
+    .item {
+      display: grid; grid-template-columns: 34mm 1fr; gap: 12px;
+      padding: 7px 0;
+      break-inside: avoid;
+    }
+    .item + .item { border-top: 1px solid var(--rule); }
+    .when { color: var(--ink-faint); font-size: 8.7pt; padding-top: 2px; }
+    .when em { display: block; font-style: normal; }
+    h3 { font-size: 10.3pt; font-weight: 700; }
+    .where { color: var(--ink-soft); font-size: 9.2pt; font-weight: 500; }
+    .badge {
+      display: inline-block; margin-left: 6px;
+      font-size: 7.4pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #0c7a43; background: #e5f5ec; border-radius: 999px; padding: 1px 8px;
+      vertical-align: 2px;
+    }
+    ul.points { margin: 5px 0 0 0; padding-left: 15px; color: var(--ink-soft); }
+    ul.points li { margin-top: 2.5px; padding-left: 2px; }
+    ul.points li::marker { color: var(--accent); }
+    /* Kenntnisse */
+    .skills-row { display: grid; grid-template-columns: 34mm 1fr; gap: 12px; padding: 4px 0; }
+    .skills-row .label { font-weight: 700; font-size: 9pt; padding-top: 1px; }
+    .skills-row .list { color: var(--ink-soft); }
+    /* ------- Druck ------- */
+    @page { size: A4; margin: 11mm 0; }
+    @media print {
+      body { background: #fff; font-size: 9.4pt; }
+      .toolbar { display: none; }
+      .page { max-width: none; margin: 0 auto; padding: 4mm 15mm; box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <span>Diese Seite ist der Lebenslauf – bearbeitbar in <code>public/cv.html</code>.</span>
+    <button type="button" onclick="window.print()">Als PDF speichern</button>
+    <span style="opacity:.7">Dateiname: Basharat-Mubashir-Ahmed-CV.pdf → danach in <code>public/assets/</code> ablegen</span>
+  </div>
+
+  <main class="page">
+
+    <!-- ================================ Kopf ================================ -->
+    <header>
+      <div>
+        <h1>Basharat Mubashir Ahmed</h1>
+        <!-- TODO: offizielle Jobbezeichnung bei Hyundai eintragen, falls abweichend -->
+        <p class="role">Data Analyst &amp; AI Engineer</p>
+        <ul class="contact">
+          <li><strong>E-Mail:</strong> basharatsaigal72@gmail.com</li>
+          <li><strong>Standort:</strong> Rhein-Main-Gebiet, Deutschland</li>
+          <!-- TODO: Telefonnummer eintragen und Zeile aktivieren:
+          <li><strong>Telefon:</strong> +49 &nbsp;…</li> -->
+          <!-- TODO: Profile eintragen und Zeilen aktivieren:
+          <li><strong>LinkedIn:</strong> linkedin.com/in/…</li>
+          <li><strong>GitHub:</strong> github.com/…</li> -->
+        </ul>
+      </div>
+      <div class="photo">
+        <span>BA</span>
+        <!-- Foto: liegt automatisch an, sobald public/assets/profile.jpg existiert -->
+        <img src="./assets/profile.jpg" alt="" onerror="this.remove()" />
+      </div>
+    </header>
+
+    <!-- ================================ Profil ============================== -->
+    <section>
+      <h2>Profil</h2>
+      <p class="profil">
+        Data Analyst mit Masterabschluss in Data Analytics und mehrjähriger Erfahrung in der
+        Analyse, Aufbereitung und Modellierung komplexer Datenbestände. Vertiefte Kenntnisse in
+        Statistik, Datenintegration und Automatisierung mit Python und SQL. Der Schwerpunkt liegt
+        auf belastbaren Analyse- und Prognosemodellen, dem Aufbau intelligenter Systeme (LLMs,
+        RAG, KI&#8209;Agenten) sowie der frühzeitigen Erkennung von Auffälligkeiten in großen
+        Datenmengen. Aktuell bei Hyundai Motor Deutschland an der Schnittstelle von Analytics und
+        AI Engineering tätig. Strukturierte, verantwortungsbewusste Arbeitsweise – gern in
+        interdisziplinären Teams.
+      </p>
+    </section>
+
+    <!-- ============================ Berufserfahrung ========================= -->
+    <section>
+      <h2>Berufserfahrung</h2>
+
+      <div class="item">
+        <div class="when">01/2026 – heute<em>Rhein-Main</em></div>
+        <div>
+          <h3>Hyundai Motor Deutschland <span class="badge">Aktuell</span></h3>
+          <p class="where">Data Analyst &amp; AI Engineer</p>
+          <ul class="points">
+            <li>Datenanalyse und interaktives Reporting mit Tableau und SQL.</li>
+            <li>AI Engineering: Konzeption und Aufbau LLM-basierter Lösungen und KI-Agenten.</li>
+            <!-- TODO: weitere Aufgaben ergänzen, sobald die Rolle Konturen hat -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">08/2024 – 12/2025<em>Frankfurt am Main</em></div>
+        <div>
+          <h3>Johann Wolfgang Goethe-Universität</h3>
+          <p class="where">Datenanalyst &amp; Projektmanager</p>
+          <ul class="points">
+            <li>Analyse und Visualisierung von KPIs im Rahmen eines EU-weiten Projekts mit Bezug zu IT-Sicherheit und digitaler Infrastruktur.</li>
+            <li>Entwicklung datengetriebener Entscheidungsgrundlagen sowie prototypischer Analysemodelle.</li>
+            <li>Verantwortung für Datenintegration, Datenqualität und Automatisierung wiederkehrender Analyseprozesse.</li>
+            <li>Enge Zusammenarbeit mit internationalen Partnern aus Forschung, öffentlicher Verwaltung und Industrie.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">07/2023 – 06/2024<em>Braunschweig</em></div>
+        <div>
+          <h3>Volkswagen Financial Services</h3>
+          <p class="where">Data-Science-Praktikant &amp; Masterarbeit</p>
+          <ul class="points">
+            <li>Entwicklung prädiktiver Modelle zur Analyse des Fahrzeugbestands im Sekundärmarkt.</li>
+            <li>Anwendung von ML-Verfahren zur datenbasierten Prognose und Marktbeobachtung.</li>
+            <li>Implementierung skalierbarer Analyseprozesse mittels CI/CD-Pipeline.</li>
+            <li>Erstellung entscheidungsrelevanter Visualisierungen für Stakeholder aus dem Asset Management.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">07/2023 – 01/2024<em>Hildesheim</em></div>
+        <div>
+          <h3>Robert Bosch GmbH</h3>
+          <p class="where">Werkstudent System- &amp; Datenanalyse</p>
+          <ul class="points">
+            <li>Erkennung von Anomalien in komplexen Messdaten.</li>
+            <li>Mitwirkung an Qualitätssicherungsprozessen im produktionsnahen Kontext.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">04/2023 – 06/2023<em>Kassel</em></div>
+        <div>
+          <h3>Fraunhofer IEE</h3>
+          <p class="where">Data-Science-Praktikant</p>
+          <ul class="points">
+            <li>Statistische Analyse von Energiemessdaten zur Identifikation auffälliger Verläufe.</li>
+            <li>Erstellung dokumentierter Reports für den forschungsseitigen Wissenstransfer.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">02/2022 – 07/2022<em>Hannover</em></div>
+        <div>
+          <h3>Synaos GmbH</h3>
+          <p class="where">Werkstudent Technischer Analyst</p>
+          <ul class="points">
+            <li>KPI-Monitoring und Entwicklung automatisierter Dashboards zur Prozessoptimierung in der Logistik.</li>
+            <li>Verbesserung der Reportingqualität durch datengetriebene Tools.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">07/2018 – 06/2019<em>Indien</em></div>
+        <div>
+          <h3>Bajaj Auto</h3>
+          <p class="where">Projektleiter Datenanalyse &amp; R&amp;D</p>
+          <ul class="points">
+            <li>Durchführung datenbasierter Marktanalysen zur Ableitung strategischer Entscheidungen.</li>
+            <li>Leitung von Analyseprojekten mit Fokus auf Effizienzsteigerung und Kostensenkung.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= Wissenschaftliche Mitarbeit ================== -->
+    <section>
+      <h2>Wissenschaftliche Mitarbeit</h2>
+      <div class="item" style="border-top: 0;">
+        <div class="when">10/2022 – 07/2024<em>Hildesheim</em></div>
+        <div>
+          <h3>Stiftung Universität Hildesheim</h3>
+          <p class="where">Wissenschaftliche Hilfskraft (Statistik, Machine Learning)</p>
+          <ul class="points">
+            <li>Unterstützung von Lehrveranstaltungen in Statistik, Datenanalyse und Machine Learning.</li>
+            <li>Fachliche Betreuung von Studierenden bei Analyseprojekten mit R, Python und Power BI.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= Akademischer Werdegang ===================== -->
+    <section>
+      <h2>Akademischer Werdegang</h2>
+
+      <div class="item">
+        <div class="when">10/2021 – 07/2024<em>Hildesheim</em></div>
+        <div>
+          <h3>Universität Hildesheim <span class="badge" style="color:#8a6a12;background:#faf3df;">Deutschlandstipendium</span></h3>
+          <p class="where">Master of Science, Data Analytics</p>
+          <ul class="points">
+            <li>Schwerpunkte: Statistik, Datenanalyse, Datenmodellierung, Machine Learning, Business Analytics.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">07/2019 – 06/2021<em>Delhi, Indien</em></div>
+        <div>
+          <h3>Indian Institute of Technology Delhi</h3>
+          <p class="where">Master of Technology, Mechanical Design</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">08/2014 – 06/2018<em>Durgapur, Indien</em></div>
+        <div>
+          <h3>National Institute of Technology Durgapur</h3>
+          <p class="where">Bachelor of Technology, Mechanical Engineering</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== Kenntnisse ============================ -->
+    <section>
+      <h2>Kenntnisse</h2>
+      <div class="skills-row">
+        <span class="label">Programmierung &amp; Analyse</span>
+        <span class="list">Python (Pandas, scikit-learn, PyTorch), SQL, R (Grundkenntnisse), Statistik, Excel, Access</span>
+      </div>
+      <div class="skills-row">
+        <span class="label">Machine Learning &amp; KI</span>
+        <span class="list">Machine Learning, Prognosemodelle, LLMs, RAG, NLP, KI-Agenten, Datenvalidierung</span>
+      </div>
+      <div class="skills-row">
+        <span class="label">Data Engineering</span>
+        <span class="list">Airflow, CI/CD, Docker, Git, BigQuery, MongoDB, MySQL</span>
+      </div>
+      <div class="skills-row">
+        <span class="label">BI &amp; Methoden</span>
+        <span class="list">Tableau, Power BI, Reporting, Datenmodellierung, agile Methoden</span>
+      </div>
+    </section>
+
+    <!-- ============================ Auszeichnungen ========================== -->
+    <section>
+      <h2>Auszeichnungen</h2>
+      <div class="skills-row">
+        <span class="label">Deutschlandstipendium</span>
+        <span class="list">Nationales Begabtenstipendium für herausragende Studienleistungen, Universität Hildesheim (Masterstudium).</span>
+      </div>
+    </section>
+
+    <!-- ================================ Sprachen ============================
+         TODO: Niveaus prüfen/ergänzen und den Block dann einkommentieren:
+    <section>
+      <h2>Sprachen</h2>
+      <div class="skills-row"><span class="label">Deutsch</span><span class="list">…</span></div>
+      <div class="skills-row"><span class="label">Englisch</span><span class="list">…</span></div>
+    </section>
+    ====================================================================== -->
+
+  </main>
+</body>
+</html>

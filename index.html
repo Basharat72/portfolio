@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basharat Mubashir Ahmed — Data Analyst &amp; AI Engineer</title>
-  <meta name="description" content="Data analyst and AI engineer in Germany — forecasting models, anomaly detection, LLM-based systems and dashboards people actually use. Currently at Hyundai Motor Deutschland." />
+  <title>Basharat Mubashir Ahmed – Data Analyst &amp; AI Engineer</title>
+  <meta name="description" content="Data Analyst und AI Engineer in Deutschland – Prognosemodelle, Anomalieerkennung, LLM-basierte Systeme und Dashboards, mit denen wirklich gearbeitet wird. Aktuell bei Hyundai Motor Deutschland." />
   <meta name="author" content="Basharat Mubashir Ahmed" />
-  <meta name="theme-color" content="#07080d" />
+  <meta name="theme-color" content="#f7f8fd" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Basharat Mubashir Ahmed — Data Analyst &amp; AI Engineer" />
-  <meta property="og:description" content="Forecasting models, anomaly detection, LLM-based systems and dashboards people actually use. Currently at Hyundai Motor Deutschland." />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:title" content="Basharat Mubashir Ahmed – Data Analyst &amp; AI Engineer" />
+  <meta property="og:description" content="Prognosemodelle, Anomalieerkennung, LLM-basierte Systeme und Dashboards, mit denen wirklich gearbeitet wird. Aktuell bei Hyundai Motor Deutschland." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
 
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 
@@ -22,8 +22,8 @@
       var root = document.documentElement;
       var theme = localStorage.getItem("theme");
       if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
-      var lang = localStorage.getItem("lang");
-      if (!lang) lang = (navigator.language || "en").slice(0, 2) === "de" ? "de" : "en";
+      // German is the default language; a stored choice wins
+      var lang = localStorage.getItem("lang") === "en" ? "en" : "de";
       root.setAttribute("lang", lang);
     })();
   </script>

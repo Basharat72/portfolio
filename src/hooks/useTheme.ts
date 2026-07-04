@@ -4,7 +4,7 @@ type Theme = "dark" | "light";
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(
-    () => (document.documentElement.getAttribute("data-theme") as Theme) || "dark"
+    () => (document.documentElement.getAttribute("data-theme") as Theme) || "light"
   );
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export function useTheme() {
     localStorage.setItem("theme", theme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "light" ? "#f6f7fb" : "#07080d");
+      ?.setAttribute("content", theme === "light" ? "#f7f8fd" : "#050810");
   }, [theme]);
 
   const toggleTheme = useCallback(

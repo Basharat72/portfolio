@@ -14,8 +14,9 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function initialLang(): Lang {
-  // the inline <head> script already resolved storage/navigator into <html lang>
-  return document.documentElement.getAttribute("lang") === "de" ? "de" : "en";
+  // the inline <head> script already resolved the stored choice into <html lang>;
+  // German is the site default
+  return document.documentElement.getAttribute("lang") === "en" ? "en" : "de";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
