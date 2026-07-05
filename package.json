@@ -7,13 +7,17 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "ship": "sh tools/ship.sh"
+    "ship": "sh tools/ship.sh",
+    "autoship": "sh tools/autoship.sh"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.6.1",
+    "@types/three": "^0.185.0",
     "motion": "^12.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "simple-icons": "^16.24.1"
+    "simple-icons": "^16.24.1",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",

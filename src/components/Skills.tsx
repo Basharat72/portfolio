@@ -9,7 +9,7 @@ export function Skills() {
   return (
     <section id="skills" className="section-alt py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
-        <SectionHead kicker="skills.kicker" title="skills.title" sub="skills.sub" />
+        <SectionHead num="02" kicker="skills.kicker" title="skills.title" sub="skills.sub" />
 
         {SKILL_GROUPS.map(({ titleKey, skills }) => (
           <div key={titleKey}>

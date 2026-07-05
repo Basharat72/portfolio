@@ -11,7 +11,7 @@ export function Education() {
   return (
     <section id="education" className="section-alt py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
-        <SectionHead kicker="edu.kicker" title="edu.title" />
+        <SectionHead num="05" kicker="edu.kicker" title="edu.title" />
 
         <div className="grid gap-5 md:grid-cols-3">
           {EDUCATION.map(({ school, prefix, icon: Icon, badgeKey }, i) => (

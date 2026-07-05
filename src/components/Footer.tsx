@@ -48,7 +48,11 @@ export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="border-t border-borderc bg-bg-alt pb-8 pt-14">
+    <footer className="overflow-hidden border-t border-borderc bg-bg-alt pb-8 pt-10">
+      {/* oversized outlined signature */}
+      <div className="watermark" aria-hidden>
+        BASHARAT
+      </div>
       <div className="container-site grid items-start gap-8 md:grid-cols-[1.2fr_1fr_auto]">
         <div>
           <a href="#top" className="flex items-center gap-3" aria-label="Back to start">

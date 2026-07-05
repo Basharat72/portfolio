@@ -17,7 +17,7 @@ export function About() {
   return (
     <section id="about" className="py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
-        <SectionHead kicker="about.kicker" title="about.title" />
+        <SectionHead num="01" kicker="about.kicker" title="about.title" />
 
         <div className="grid items-start gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-[4.5rem]">
           <div className="space-y-5">

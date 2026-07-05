@@ -43,7 +43,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
-        <SectionHead kicker="contact.kicker" title="contact.title" sub="contact.sub" />
+        <SectionHead num="06" kicker="contact.kicker" title="contact.title" sub="contact.sub" />
 
         <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           <div className="flex flex-col gap-3.5">

@@ -23,7 +23,7 @@ export function Projects() {
     <section id="projects" className="py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
         <div className="flex items-end justify-between gap-6">
-          <SectionHead kicker="proj.kicker" title="proj.title" sub="proj.sub" />
+          <SectionHead num="04" kicker="proj.kicker" title="proj.title" sub="proj.sub" />
           <Reveal className="mb-8 hidden shrink-0 gap-2.5 md:flex md:mb-10">
             <button type="button" className="icon-btn" aria-label={t("proj.prev")} onClick={() => scroll(-1)}>
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 5l-7 7 7 7" /></svg>

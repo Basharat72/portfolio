@@ -57,13 +57,22 @@ export function Stats() {
           <p className="mb-5 text-center text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-faint">
             {t("stats.stations")}
           </p>
-          <div className="stations">
-            {STATIONS.map(({ name, logo: Logo }) => (
-              <span key={name} className="station">
-                {Logo && <Logo size={22} />}
-                {name}
-              </span>
-            ))}
+          <div className="stations-marquee">
+            <div className="stations">
+              {STATIONS.map(({ name, logo: Logo }) => (
+                <span key={name} className="station">
+                  {Logo && <Logo size={22} />}
+                  {name}
+                </span>
+              ))}
+              {/* duplicate set makes the marquee loop seamless */}
+              {STATIONS.map(({ name, logo: Logo }) => (
+                <span key={`${name}-dup`} className="station" aria-hidden="true">
+                  {Logo && <Logo size={22} />}
+                  {name}
+                </span>
+              ))}
+            </div>
           </div>
         </Reveal>
       </div>

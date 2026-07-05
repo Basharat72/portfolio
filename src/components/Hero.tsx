@@ -1,9 +1,14 @@
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import type { MouseEvent } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { HERO_ROLES } from "../i18n/translations";
+import { useTheme } from "../hooks/useTheme";
 import { useTyping } from "../hooks/useTyping";
 import { Magnetic } from "./Magnetic";
+
+// three.js lives in its own chunk — loaded after paint, desktop only
+const Hero3D = lazy(() => import("./Hero3D"));
 import {
   ArrowRightIcon, CrossGridIcon, DatabaseIcon, DownloadIcon, GitHubIcon,
   LinkedInIcon, SparkleIcon,
@@ -90,8 +95,18 @@ function PhotoCard() {
 
 export function Hero() {
   const { lang, t } = useLanguage();
+  const { theme } = useTheme();
   const typed = useTyping(HERO_ROLES[lang]);
   const reduceMotion = useReducedMotion();
+
+  // mount the 3D scene only where it earns its keep
+  const [show3d, setShow3d] = useState(false);
+  useEffect(() => {
+    if (!reduceMotion && window.matchMedia("(min-width: 768px)").matches) {
+      const idle = setTimeout(() => setShow3d(true), 400);
+      return () => clearTimeout(idle);
+    }
+  }, [reduceMotion]);
 
   // background parallax
   const bx = useMotionValue(0);
@@ -134,6 +149,18 @@ export function Hero() {
         <div className="hero-grid-lines" />
       </motion.div>
 
+      {/* 3D particle terrain along the bottom of the hero */}
+      {show3d && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] opacity-80 [mask-image:linear-gradient(to_top,black_35%,transparent_96%)]"
+        >
+          <Suspense fallback={null}>
+            <Hero3D dark={theme === "dark"} />
+          </Suspense>
+        </div>
+      )}
+
       <div className="container-site relative grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
         <motion.div
           variants={container}
@@ -153,9 +180,9 @@ export function Hero() {
             <span className="mb-3 block text-base font-medium text-soft sm:text-lg lg:text-xl">
               {t("hero.greeting")} Basharat Mubashir Ahmed.
             </span>
-            <span className="block font-display text-[clamp(2.3rem,5.4vw,3.9rem)] font-bold leading-[1.08] tracking-tight">
+            <span className="block font-display text-[clamp(2.3rem,5.4vw,3.9rem)] font-bold leading-[1.06] tracking-[-0.035em]">
               {t("hero.title.a")}
-              <span className="grad-text">{t("hero.title.b")}</span>
+              <span className="grad-text accent-serif">{t("hero.title.b")}</span>
               {t("hero.title.c")}
             </span>
           </motion.h1>

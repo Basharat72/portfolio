@@ -78,7 +78,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-[clamp(3.25rem,6.5vw,5.25rem)]">
       <div className="container-site">
-        <SectionHead kicker="exp.kicker" title="exp.title" />
+        <SectionHead num="03" kicker="exp.kicker" title="exp.title" />
 
         {/* desktop: company list left, details right — one viewport, no scroll */}
         <Reveal className="hidden md:block">
