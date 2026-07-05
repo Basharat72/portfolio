@@ -15,7 +15,7 @@ const NAV_ITEMS: { id: string; key: TranslationKey }[] = [
 
 function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-3" aria-label="Basharat Mubashir Ahmed — home">
+    <a href="#top" className="flex items-center gap-3">
       <span
         aria-hidden
         className="grad-bg flex h-10 w-10 items-center justify-center rounded-xl font-display text-lg font-bold text-white"

@@ -55,7 +55,7 @@ export function Footer() {
       </div>
       <div className="container-site grid items-start gap-8 md:grid-cols-[1.2fr_1fr_auto]">
         <div>
-          <a href="#top" className="flex items-center gap-3" aria-label="Back to start">
+          <a href="#top" className="flex items-center gap-3">
             <span
               aria-hidden
               className="grad-bg flex h-10 w-10 items-center justify-center rounded-xl font-display text-lg font-bold text-white"

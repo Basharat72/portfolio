@@ -6,15 +6,13 @@ export function Loader() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const finish = () => setTimeout(() => setDone(true), 250);
-    if (document.readyState === "complete") {
-      finish();
-    } else {
-      window.addEventListener("load", finish, { once: true });
-    }
-    const safety = setTimeout(() => setDone(true), 1400);
+    // wait for the display fonts (not the full page) — keeps LCP fast
+    let cancelled = false;
+    const finish = () => !cancelled && setTimeout(() => setDone(true), 150);
+    document.fonts?.ready.then(finish);
+    const safety = setTimeout(() => setDone(true), 900);
     return () => {
-      window.removeEventListener("load", finish);
+      cancelled = true;
       clearTimeout(safety);
     };
   }, []);

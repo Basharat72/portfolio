@@ -65,8 +65,11 @@ function PhotoCard() {
         </span>
         {/* TODO: drop your photo into public/assets/profile.jpg — initials show until then */}
         <img
-          src="./assets/profile.jpg"
+          src="./assets/profile.webp"
           alt={t("hero.photoAlt")}
+          width={680}
+          height={680}
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
           onError={(e) => ((e.target as HTMLImageElement).style.display = "none")}
         />
