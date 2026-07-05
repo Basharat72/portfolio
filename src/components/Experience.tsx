@@ -7,6 +7,20 @@ import type { ExperienceEntry } from "../data";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
+/** Brand mark on a white tile, or a letter monogram where no logo exists. */
+function CompanyTile({ entry, size = 38, logoSize = 20 }: { entry: ExperienceEntry; size?: number; logoSize?: number }) {
+  const Logo = entry.logo;
+  return (
+    <span
+      className="logo-tile font-display font-bold"
+      style={{ width: size, height: size }}
+      aria-hidden
+    >
+      {Logo ? <Logo size={logoSize} /> : entry.monogram}
+    </span>
+  );
+}
+
 /** Shared detail block (used by desktop panel and mobile accordion). */
 function Details({ entry }: { entry: ExperienceEntry }) {
   const { t } = useLanguage();
@@ -14,7 +28,10 @@ function Details({ entry }: { entry: ExperienceEntry }) {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-display text-xl font-semibold">{company}</h3>
+        <span className="flex items-center gap-3.5">
+          <CompanyTile entry={entry} size={44} logoSize={24} />
+          <h3 className="font-display text-xl font-semibold">{company}</h3>
+        </span>
         {current && <span className="badge badge--current">{t("exp.current")}</span>}
       </div>
       <p className="mt-0.5 text-[0.97rem] font-semibold text-accent2">
@@ -85,7 +102,7 @@ export function Experience() {
                     aria-controls="exp-panel"
                     tabIndex={selected ? 0 : -1}
                     onClick={() => setActive(i)}
-                    className={`relative rounded-xl px-4 py-2.5 text-left transition-colors duration-200 ${
+                    className={`relative flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-left transition-colors duration-200 ${
                       selected ? "text-body" : "text-soft hover:bg-surface-hover hover:text-body"
                     }`}
                   >
@@ -97,14 +114,19 @@ export function Experience() {
                         transition={{ type: "spring", stiffness: 400, damping: 32 }}
                       />
                     )}
-                    <span className="relative block text-[0.93rem] font-semibold">
-                      {entry.company}
-                      {entry.current && (
-                        <span className="ml-2 inline-block h-1.5 w-1.5 rounded-full bg-[#22c55e] align-middle" aria-hidden />
-                      )}
+                    <span className="relative flex-none">
+                      <CompanyTile entry={entry} size={32} logoSize={16} />
                     </span>
-                    <span className="relative block text-[0.76rem] text-faint">
-                      {t(`${entry.prefix}.date` as TranslationKey)}
+                    <span className="relative min-w-0">
+                      <span className="block truncate text-[0.93rem] font-semibold">
+                        {entry.company}
+                        {entry.current && (
+                          <span className="ml-2 inline-block h-1.5 w-1.5 rounded-full bg-[#22c55e] align-middle" aria-hidden />
+                        )}
+                      </span>
+                      <span className="block text-[0.76rem] text-faint">
+                        {t(`${entry.prefix}.date` as TranslationKey)}
+                      </span>
                     </span>
                   </button>
                 );
@@ -145,10 +167,13 @@ export function Experience() {
                     onClick={() => setActive(openItem ? -1 : i)}
                     className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
                   >
-                    <span>
-                      <span className="block text-[0.95rem] font-semibold">{entry.company}</span>
-                      <span className="block text-[0.78rem] text-faint">
-                        {t(`${entry.prefix}.role` as TranslationKey)}
+                    <span className="flex min-w-0 items-center gap-3">
+                      <CompanyTile entry={entry} size={34} logoSize={17} />
+                      <span className="min-w-0">
+                        <span className="block truncate text-[0.95rem] font-semibold">{entry.company}</span>
+                        <span className="block text-[0.78rem] text-faint">
+                          {t(`${entry.prefix}.role` as TranslationKey)}
+                        </span>
                       </span>
                     </span>
                     <motion.span

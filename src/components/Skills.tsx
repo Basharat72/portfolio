@@ -23,8 +23,8 @@ export function Skills() {
                 return (
                   <Reveal key={skill.name ?? skill.nameKey} delay={i % 6}>
                     <div className="skill-card glass transition-transform duration-300 hover:-translate-y-1">
-                      <span className="skill-icon" aria-hidden>
-                        <Icon />
+                      <span className="logo-tile" aria-hidden>
+                        <Icon size={21} />
                       </span>
                       <span className="relative text-[0.92rem] font-medium">{label}</span>
                     </div>

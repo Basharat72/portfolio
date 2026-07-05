@@ -52,6 +52,7 @@ const en = {
   "stats.years": "Years working with data",
   "stats.orgs": "Companies & research institutes",
   "stats.degrees": "Academic degrees",
+  "stats.stations": "Stations so far",
 
   "about.kicker": "About me",
   "about.title": "The story behind the data",
@@ -274,6 +275,7 @@ const de: Record<TranslationKey, string> = {
   "stats.years": "Jahre Erfahrung mit Daten",
   "stats.orgs": "Unternehmen & Forschungseinrichtungen",
   "stats.degrees": "Hochschulabschlüsse",
+  "stats.stations": "Bisherige Stationen",
 
   "about.kicker": "Über mich",
   "about.title": "Die Geschichte hinter den Daten",

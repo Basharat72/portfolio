@@ -2,6 +2,7 @@ import { animate, useInView, useReducedMotion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import type { TranslationKey } from "../i18n/translations";
+import { STATIONS } from "../data";
 import { Reveal } from "./Reveal";
 
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -48,6 +49,23 @@ export function Stats() {
             <span className="text-[0.92rem] text-soft">{t(labelKey)}</span>
           </Reveal>
         ))}
+      </div>
+
+      {/* career-stations logo strip — instant credibility, zero scrolling */}
+      <div className="container-site border-t border-borderc pb-2 pt-7">
+        <Reveal>
+          <p className="mb-5 text-center text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-faint">
+            {t("stats.stations")}
+          </p>
+          <div className="stations">
+            {STATIONS.map(({ name, logo: Logo }) => (
+              <span key={name} className="station">
+                {Logo && <Logo size={22} />}
+                {name}
+              </span>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

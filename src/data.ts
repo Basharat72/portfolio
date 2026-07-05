@@ -6,13 +6,18 @@
 import type { ComponentType } from "react";
 import type { TranslationKey } from "./i18n/translations";
 import {
-  PythonIcon, DatabaseIcon, RLangIcon, SpreadsheetIcon, BellCurveIcon, SchemaIcon,
-  NetworkIcon, ScatterIcon, FlameIcon, DataFrameIcon, SparklesIcon, WaveTextIcon,
-  RobotIcon, TrendIcon, PinwheelIcon, ContainerIcon, BranchIcon, InfinityIcon,
-  LensChartIcon, LeafIcon, DoubleDbIcon, CrossGridIcon, BarsIcon, ReportIcon,
+  DatabaseIcon, SpreadsheetIcon, BellCurveIcon, SchemaIcon,
+  NetworkIcon, SparklesIcon, WaveTextIcon,
+  RobotIcon, TrendIcon, InfinityIcon,
+  CrossGridIcon, BarsIcon, ReportIcon,
   CycleIcon, ShieldCheckIcon, GradCapIcon, AtomIcon, GearIcon, MedalIcon,
-  BoardIcon, FlaskIcon, SearchIcon, BoltIcon, StreamlitIcon, DashIcon,
+  BoardIcon, FlaskIcon, SearchIcon, BoltIcon,
 } from "./components/icons";
+import {
+  AirflowLogo, BigqueryLogo, BoschLogo, DockerLogo, FraunhoferLogo, GitLogo,
+  HyundaiLogo, MongoLogo, MysqlLogo, PandasLogo, PlotlyLogo, PythonLogo,
+  PytorchLogo, RLogo, ScikitLogo, StreamlitLogo, VolkswagenLogo,
+} from "./components/brandLogos";
 
 type IconType = ComponentType<{ size?: number }>;
 
@@ -33,9 +38,9 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     titleKey: "skills.g1",
     skills: [
-      { name: "Python", icon: PythonIcon },
+      { name: "Python", icon: PythonLogo },
       { name: "SQL", icon: DatabaseIcon },
-      { name: "R", icon: RLangIcon },
+      { name: "R", icon: RLogo },
       { name: "Excel & Access", icon: SpreadsheetIcon },
       { nameKey: "skills.statistics", icon: BellCurveIcon },
       { nameKey: "skills.modeling", icon: SchemaIcon },
@@ -45,9 +50,9 @@ export const SKILL_GROUPS: SkillGroup[] = [
     titleKey: "skills.g2",
     skills: [
       { name: "Machine Learning", icon: NetworkIcon },
-      { name: "scikit-learn", icon: ScatterIcon },
-      { name: "PyTorch", icon: FlameIcon },
-      { name: "Pandas", icon: DataFrameIcon },
+      { name: "scikit-learn", icon: ScikitLogo },
+      { name: "PyTorch", icon: PytorchLogo },
+      { name: "Pandas", icon: PandasLogo },
       { name: "LLMs & RAG", icon: SparklesIcon },
       { name: "NLP", icon: WaveTextIcon },
       { nameKey: "skills.agents", icon: RobotIcon },
@@ -57,13 +62,13 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     titleKey: "skills.g3",
     skills: [
-      { name: "Airflow", icon: PinwheelIcon },
-      { name: "Docker", icon: ContainerIcon },
-      { name: "Git", icon: BranchIcon },
+      { name: "Airflow", icon: AirflowLogo },
+      { name: "Docker", icon: DockerLogo },
+      { name: "Git", icon: GitLogo },
       { name: "CI/CD", icon: InfinityIcon },
-      { name: "BigQuery", icon: LensChartIcon },
-      { name: "MongoDB", icon: LeafIcon },
-      { name: "MySQL", icon: DoubleDbIcon },
+      { name: "BigQuery", icon: BigqueryLogo },
+      { name: "MongoDB", icon: MongoLogo },
+      { name: "MySQL", icon: MysqlLogo },
       { nameKey: "skills.validation", icon: ShieldCheckIcon },
     ],
   },
@@ -71,8 +76,8 @@ export const SKILL_GROUPS: SkillGroup[] = [
     titleKey: "skills.g4",
     skills: [
       { name: "Tableau", icon: CrossGridIcon },
-      { name: "Streamlit", icon: StreamlitIcon },
-      { name: "Dash", icon: DashIcon },
+      { name: "Streamlit", icon: StreamlitLogo },
+      { name: "Dash", icon: PlotlyLogo },
       { name: "Reporting", icon: ReportIcon },
       { nameKey: "skills.agile", icon: CycleIcon },
     ],
@@ -86,17 +91,36 @@ export interface ExperienceEntry {
   bullets: number;
   tags: string[];
   current?: boolean;
+  /** official brand mark where available, else a letter monogram */
+  logo?: IconType;
+  monogram?: string;
 }
 
 export const EXPERIENCE: ExperienceEntry[] = [
-  { company: "Hyundai Motor Deutschland", prefix: "exp1", bullets: 3, tags: ["Tableau", "SQL", "AI Agents", "LLMs"], current: true },
-  { company: "Goethe-Universität Frankfurt", prefix: "exp2", bullets: 4, tags: ["KPI Analytics", "Data Integration", "Automation"] },
-  { company: "Volkswagen Financial Services", prefix: "exp3", bullets: 4, tags: ["Python", "scikit-learn", "CI/CD", "Forecasting"] },
-  { company: "Robert Bosch GmbH", prefix: "exp4", bullets: 2, tags: ["Python", "Anomaly Detection", "Quality Assurance"] },
-  { company: "Fraunhofer IEE", prefix: "exp5", bullets: 2, tags: ["Statistics", "Time Series", "Reporting"] },
-  { company: "Universität Hildesheim", prefix: "exp6", bullets: 2, tags: ["R", "Python", "Power BI", "Teaching"] },
-  { company: "Synaos GmbH", prefix: "exp7", bullets: 2, tags: ["Dashboards", "KPI Monitoring"] },
-  { company: "Bajaj Auto", prefix: "exp8", bullets: 2, tags: ["Market Analysis", "R&D"] },
+  { company: "Hyundai Motor Deutschland", prefix: "exp1", bullets: 3, tags: ["Tableau", "SQL", "AI Agents", "LLMs"], current: true, logo: HyundaiLogo },
+  { company: "Goethe-Universität Frankfurt", prefix: "exp2", bullets: 4, tags: ["KPI Analytics", "Data Integration", "Automation"], monogram: "G" },
+  { company: "Volkswagen Financial Services", prefix: "exp3", bullets: 4, tags: ["Python", "scikit-learn", "CI/CD", "Forecasting"], logo: VolkswagenLogo },
+  { company: "Robert Bosch GmbH", prefix: "exp4", bullets: 2, tags: ["Python", "Anomaly Detection", "Quality Assurance"], logo: BoschLogo },
+  { company: "Fraunhofer IEE", prefix: "exp5", bullets: 2, tags: ["Statistics", "Time Series", "Reporting"], logo: FraunhoferLogo },
+  { company: "Universität Hildesheim", prefix: "exp6", bullets: 2, tags: ["R", "Python", "Power BI", "Teaching"], monogram: "H" },
+  { company: "Synaos GmbH", prefix: "exp7", bullets: 2, tags: ["Dashboards", "KPI Monitoring"], monogram: "S" },
+  { company: "Bajaj Auto", prefix: "exp8", bullets: 2, tags: ["Market Analysis", "R&D"], monogram: "B" },
+];
+
+/* --------------------------------------------- career-stations strip -- */
+export interface Station {
+  name: string;
+  logo?: IconType;
+}
+
+export const STATIONS: Station[] = [
+  { name: "Hyundai", logo: HyundaiLogo },
+  { name: "Volkswagen FS", logo: VolkswagenLogo },
+  { name: "Bosch", logo: BoschLogo },
+  { name: "Fraunhofer IEE", logo: FraunhoferLogo },
+  { name: "Goethe-Universität" },
+  { name: "Synaos" },
+  { name: "Bajaj Auto" },
 ];
 
 /* ---------------------------------------------------------- education -- */
