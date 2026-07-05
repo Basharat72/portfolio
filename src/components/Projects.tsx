@@ -5,7 +5,6 @@ import type { TranslationKey } from "../i18n/translations";
 import { PROJECTS } from "../data";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
-import { ExternalIcon, GitHubIcon } from "./icons";
 
 /**
  * Projects as a horizontal snap carousel: all six cards live in one row —
@@ -72,21 +71,6 @@ export function Projects() {
                     {tags.map((tag) => (
                       <span key={tag} className="tag-pill">{tag}</span>
                     ))}
-                  </div>
-                  <div className="mt-1 flex gap-2.5">
-                    {wip ? (
-                      <a href="#" className="btn btn--ghost btn--small">{t("proj.soon")}</a>
-                    ) : (
-                      <>
-                        {/* TODO: add repository / write-up links */}
-                        <a href="#" className="btn btn--ghost btn--small">
-                          <GitHubIcon size={15} /> GitHub
-                        </a>
-                        <a href="#" className="btn btn--ghost btn--small">
-                          {t("proj.case")} <ExternalIcon />
-                        </a>
-                      </>
-                    )}
                   </div>
                 </div>
               </motion.article>

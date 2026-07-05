@@ -78,8 +78,8 @@ export function Footer() {
         </nav>
 
         <div className="flex gap-2.5 pt-1">
-          <a className="icon-btn" href={LINKS.github} aria-label="GitHub"><GitHubIcon size={18} /></a>
-          <a className="icon-btn" href={LINKS.linkedin} aria-label="LinkedIn"><LinkedInIcon size={17} /></a>
+          <a className="icon-btn" href={LINKS.github} aria-label="GitHub" target="_blank" rel="noreferrer"><GitHubIcon size={18} /></a>
+          <a className="icon-btn" href={LINKS.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer"><LinkedInIcon size={17} /></a>
           <a className="icon-btn" href={`mailto:${LINKS.email}`} aria-label="Email"><MailIcon size={18} /></a>
         </div>
       </div>

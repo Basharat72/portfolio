@@ -10,6 +10,7 @@ import { GitHubIcon, LinkedInIcon, MailIcon, PinIcon, SendIcon } from "./icons";
 export function Contact() {
   const { t } = useLanguage();
   const [toast, setToast] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const showToast = (message: string) => {
@@ -18,8 +19,9 @@ export function Contact() {
     toastTimer.current = setTimeout(() => setToast(null), 2600);
   };
 
-  // no backend needed: compose the message in the visitor's own email client
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  // submissions go straight to the inbox via FormSubmit; if the service is
+  // ever unreachable, gracefully fall back to the visitor's email app
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -27,10 +29,31 @@ export function Contact() {
     const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
 
-    const subject = encodeURIComponent(`${t("form.mailSubject")} ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    showToast(t("toast.mail"));
-    window.location.href = `mailto:${LINKS.email}?subject=${subject}&body=${body}`;
+    setSending(true);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${LINKS.email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `${t("form.mailSubject")} ${name}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      if (!res.ok) throw new Error(`status ${res.status}`);
+      form.reset();
+      showToast(t("toast.sent"));
+    } catch {
+      const subject = encodeURIComponent(`${t("form.mailSubject")} ${name}`);
+      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      showToast(t("toast.mail"));
+      window.location.href = `mailto:${LINKS.email}?subject=${subject}&body=${body}`;
+    } finally {
+      setSending(false);
+    }
   };
 
   const cards = [
@@ -64,7 +87,7 @@ export function Contact() {
               return (
                 <Reveal key={label} delay={i}>
                   {href ? (
-                    <a className={cls} href={href}>{inner}</a>
+                    <a className={cls} href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>{inner}</a>
                   ) : (
                     <div className={cls}>{inner}</div>
                   )}
@@ -96,8 +119,8 @@ export function Contact() {
                 <textarea id="cf-msg" name="message" rows={5} required
                   className="form-input" placeholder={t("form.messagePh")} />
               </div>
-              <button type="submit" className="btn btn--primary grad-bg w-full">
-                {t("form.submit")}
+              <button type="submit" className="btn btn--primary grad-bg w-full disabled:opacity-70" disabled={sending}>
+                {sending ? t("form.sending") : t("form.submit")}
                 <SendIcon />
               </button>
               <p className="text-center text-[0.8rem] text-faint">{t("form.note")}</p>

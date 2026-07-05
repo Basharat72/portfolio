@@ -215,10 +215,12 @@ const en = {
   "form.message": "Message",
   "form.messagePh": "What would you like to talk about?",
   "form.submit": "Send message",
-  "form.note": "Opens your email app — nothing is stored on this site.",
+  "form.sending": "Sending…",
+  "form.note": "Goes straight to my inbox — I usually reply within a day.",
   "form.mailSubject": "Portfolio contact from",
 
   "toast.mail": "Opening your email app…",
+  "toast.sent": "Message sent — thank you!",
 
   "footer.tagline": "Data analyst & AI engineer based in Germany.",
   "footer.rights": "All rights reserved.",
@@ -441,10 +443,12 @@ const de: Record<TranslationKey, string> = {
   "form.message": "Nachricht",
   "form.messagePh": "Worüber möchten Sie sprechen?",
   "form.submit": "Nachricht senden",
-  "form.note": "Öffnet Ihr E-Mail-Programm – auf dieser Seite wird nichts gespeichert.",
+  "form.sending": "Wird gesendet …",
+  "form.note": "Landet direkt in meinem Postfach – ich antworte in der Regel innerhalb eines Tages.",
   "form.mailSubject": "Portfolio-Kontakt von",
 
   "toast.mail": "E-Mail-Programm wird geöffnet …",
+  "toast.sent": "Nachricht gesendet – vielen Dank!",
 
   "footer.tagline": "Data Analyst & AI Engineer aus Deutschland.",
   "footer.rights": "Alle Rechte vorbehalten.",

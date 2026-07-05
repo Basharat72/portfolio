@@ -217,12 +217,12 @@ export function Hero() {
             </Magnetic>
             <div className="ml-1 flex gap-2.5">
               <Magnetic>
-                <a className="icon-btn" href={LINKS.github} aria-label="GitHub">
+                <a className="icon-btn" href={LINKS.github} aria-label="GitHub" target="_blank" rel="noreferrer">
                   <GitHubIcon />
                 </a>
               </Magnetic>
               <Magnetic>
-                <a className="icon-btn" href={LINKS.linkedin} aria-label="LinkedIn">
+                <a className="icon-btn" href={LINKS.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer">
                   <LinkedInIcon />
                 </a>
               </Magnetic>
